@@ -1,0 +1,151 @@
+{% load static%}
+<!doctype html>
+<html>
+  <meta charset="UTF-8">
+  <title>Analysis</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <style>
+    
+    .main{
+            position: fixed;
+            top: 140px;
+            left: 410px;
+            width: 550px;
+            background-color:#ffffff;
+            border-radius: 10px;
+            align-items: center;
+            padding: 5%;
+        }
+        h1{
+            color: #0086b3;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        input[type=submit]{
+            background-color: rgb(7, 12, 37);
+            border: 2px;
+            color: white;
+            padding: 8px 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        input[type=button]{
+            background-color: rgb(7, 12, 37);
+            border: 2px;
+            color: white;
+            padding: 8px 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        body{
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        width: 100%;
+        height: 100vh;
+        background: skyblue;
+        }
+        .card {
+        margin: 5rem;
+        width: 500px;
+        height: auto;
+        padding: 2rem;
+        border-radius: 1rem;
+        }
+        .card {
+        /* other styles */
+        background-color: rgba(255, 255, 255, 0.7);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        }
+        .card-title {
+        margin-top: 0;
+        margin-bottom: .5rem;
+        color: rgb(7, 12, 37);
+        }
+
+  </style>
+  <body>
+
+    <div class="tm-top-header">
+        <div class="container">
+          <div class="row">
+              <div class="mobile-menu-icon">
+                <i class="fa fa-bars"></i>
+              </div>
+              <nav class="tm-nav">
+                <ul>
+                  <li><a href="{% url 'home' %}" >Home</a></li>
+                  <li><a href="{% url 'predict' %}" >Analysis</a></li>
+                  <li><a href="{% url 'about' %}"  >About</a></li>
+                  <li><a href="{% url 'contact' %}" >Contact</a></li>
+                </ul>
+              </nav>   
+            </div>           
+          </div>    
+        </div>
+      </div>
+    <div align="center" class"main">
+      <h1 style="color: black;"><strong>PREDICTION PLAYS HERE!!!</strong></h1>
+      <div class="card">
+        <h1 class="card-title">Enter The Details</h1><br><br>
+        <form action="result">
+            <table>
+                <tr class="id1">
+                    <td align='left'>Age &nbsp;&nbsp;&nbsp;</td>
+                    <td align='left'><input type="text" name="n1" required></td>
+                </tr>
+                <tr class="id2">
+                    <td align='left'>HR &nbsp;&nbsp;&nbsp;</td>
+                    <td align='left'><input type="text" name="n2" required></td>
+                </tr>
+                <tr class="id3">
+                    <td align='left'>PULSE &nbsp;&nbsp;&nbsp;</td>
+                    <td align='left'><input type="text" name="n3" required></td>
+                </tr>
+                <tr class="id4">
+                    <td align='left'>RESP &nbsp;&nbsp;&nbsp;</td>
+                    <td align='left'><input type="text" name="n4" required></td>
+                </tr>
+                <tr class="id5">
+                    <td align='left'>SpO2 &nbsp;&nbsp;&nbsp;</td>
+                    <td align='left'><input type="text" name="n5" required></td>
+                </tr>
+                <tr class="id6">
+                    <td align='left'>SSbp &nbsp;&nbsp;&nbsp;</td>
+                    <td align='left'><input type="text" name="n6" required></td>
+                </tr>
+                <tr class="id7">
+                    <td align='left'>DSbp &nbsp;&nbsp;&nbsp;</td>
+                    <td align='left'><input type="text" name="n7" required></td>
+                </tr>
+            </table>
+            <input type="submit">
+            <a href="{% url 'predict' %}"><input type="button" value="Back"></a>
+        </form>
+    </div>
+            
+            <div class="card" >
+                <h1 class="card-title">Result:<h1 style="color: rgb(4, 80, 80); background-color: rgb(241, 241, 133); padding: 5px;">{{result2}}</h1></h1>
+            </div>
+         
+          <footer>      
+            <div class="container">
+                <div class="row tm-copyright">
+              
+               </div>  
+            </div>
+         </footer> <!-- Footer content-->  
+         
+      <!-- JS -->
+   <script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js' %}"></script>      <!-- jQuery -->
+   <script type="text/javascript" src="{% static 'js/templatemo-script.js' %}"></script>      <!-- Templatemo Script -->
+  </body>
+</html> 
